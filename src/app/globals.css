@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Keep these in sync with src/config/theme.js */
+  --color-brown: #4a2e1f;
+  --color-brown-dark: #301c12;
+  --color-brown-light: #6e4a32;
+
+  --color-gold: #c08a1e;
+  --color-gold-dark: #96690f;
+  --color-gold-light: #e2b04c;
+
+  --color-cream: #f6eedd;
+  --color-cream-soft: #fbf7ee;
+  --color-cream-deep: #eee0bf;
+
+  --color-green: #54622f;
+  --color-green-dark: #3b451f;
+
+  --color-charcoal: #231d17;
+  --color-rust: #a34328;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+}
+
+/* Visible keyboard focus everywhere, styled instead of removed */
+:focus-visible {
+  outline: 2px solid var(--color-gold-dark);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-px {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-px {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-px {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Hairline oil-drop divider used between a few sections */
+.drop-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
+}
