@@ -1,23 +1,5 @@
 "use client";
 
-/**
- * Samar Sing Tel — Animated Hero ("Frosted Oil Glow")
- * Drop-in replacement for your current hero section.
- *
- * Install:
- *   1. Put hero-oil-bottle.jpg in /public/images/
- *   2. Put Hero.jsx in /src/components/ (or /components/)
- *   3. Put hero.css next to it (same folder)
- *   4. In your page (app/page.jsx or pages/index.jsx):
- *
- *        import Hero from "@/components/Hero";
- *        ...
- *        <Hero />
- *
- * Tailwind: works out of the box (uses arbitrary values, no config needed).
- * Uses your existing src/config/site.js for brand + WhatsApp details.
- */
-
 import Image from "next/image";
 import { Fraunces, Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
@@ -66,7 +48,7 @@ export default function Hero() {
           <span className="rise inline-flex items-center gap-2 rounded-full border border-[#d97706]/25 bg-white/60 px-4 py-1.5 text-xs font-medium text-[#2a2016]/70 backdrop-blur-md">
             <span className="animate-floaty size-2 rounded-full bg-[#f5a623]" />
             Cold-pressed in small batches
-          </span>
+          </span> 
 
           <h1
             className={`rise mt-6 text-5xl font-semibold leading-[1.05] text-[#2a2016] lg:text-6xl ${fraunces.className}`}
