@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { faqs } from "@/data/faq";
 
@@ -47,7 +48,7 @@ export default function FAQ() {
       <Container className="py-16 sm:py-20 lg:py-24">
         <SectionHeading eyebrow="FAQ" heading="Frequently Asked Questions" />
 
-        <div className="mt-8 sm:mt-10 max-w-2xl">
+        <Reveal delay={0.1} className="mt-8 sm:mt-10 max-w-2xl">
           {faqs.map((item, i) => (
             <FAQItem
               key={item.question}
@@ -56,7 +57,7 @@ export default function FAQ() {
               onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
             />
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -29,9 +29,9 @@ export const metadata = {
     template: `%s | ${siteConfig.brand.name}`,
   },
   description:
-    "Summer Sing Tel — groundnut oil (peanut oil) made for everyday Indian kitchens in Gujarat. Reach out directly on WhatsApp to place your order.",
+    "Samar Sing Tel — groundnut oil (peanut oil) made for everyday Indian kitchens in Gujarat. Reach out directly on WhatsApp to place your order.",
   keywords: [
-    "Summer Sing Tel",
+    "Samar Sing Tel",
     "Groundnut Oil",
     "Peanut Oil",
     "Groundnut Oil Gujarat",

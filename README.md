@@ -1,6 +1,6 @@
-# Summer Sing Tel
+# Samar Sing Tel
 
-Premium single-page marketing website for the Summer Sing Tel groundnut oil brand, built with Next.js (App Router), JavaScript and Tailwind CSS. No backend, no cart — every "buy" action opens a pre-filled WhatsApp chat.
+Premium single-page marketing website for the Samar Sing Tel groundnut oil brand, built with Next.js (App Router), JavaScript and Tailwind CSS. No backend, no cart — every "buy" action opens a pre-filled WhatsApp chat.
 
 ## Getting started
 
@@ -25,7 +25,10 @@ Everything you're likely to edit lives in plain data/config files, separate from
 | Brand colors | CSS variables in `src/app/globals.css`, mirrored in `src/config/theme.js` and `tailwind.config.js` |
 | Section copy / layout | `src/components/sections/*.jsx` |
 | Fonts | `src/app/layout.js` (currently Fraunces for headings, Work Sans for body) |
-| Images / illustrations | `src/components/ui/illustrations/*.jsx` (hand-built SVGs — swap for real photography by dropping files in `public/images` and using `next/image`) |
+| Real photos (hero, farm, kitchen, product sizes, logo) | `src/config/images.js` — one file, every photo path in one place. Drop new files into `public/images/` and update the path here; nothing else needs to change. |
+| Scroll-in animations | `src/components/ui/Reveal.jsx` — wraps a block and fades/slides it in once it scrolls into view (`direction="up\|left\|right\|scale"`, optional `delay`). Already used across every section. |
+
+> The old hand-drawn SVGs in `src/components/ui/illustrations/` are still in the repo (e.g. `PeanutShape` is used as a small decorative bullet icon) but every "photo-sized" spot — hero, brand story, lifestyle shot, product sizes — now renders a real `next/image` sourced from `src/config/images.js`, currently pointed at the placeholder photos that shipped with the project. Swap those paths for your real photography whenever it's ready; no component code needs to change. `BottleIllustration.jsx` and `FieldPattern.jsx` are unused leftovers and safe to delete.
 
 ## WhatsApp
 

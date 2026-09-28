@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-brand-cream-soft/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-cream-soft/45">
           <p>© {new Date().getFullYear()} {siteConfig.brand.name} · All rights reserved</p>
-          <p>Summer Sing Tel — Groundnut Oil, Gujarat</p>
+          <p>Samar Sing Tel — Groundnut Oil, Gujarat</p>
         </div>
       </Container>
     </footer>

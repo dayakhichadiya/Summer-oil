@@ -1,4 +1,5 @@
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { processSteps } from "@/data/process";
 
@@ -14,9 +15,9 @@ export default function OurProcess() {
 
         <ol className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-y-12">
           {processSteps.map((step, i) => (
-            <li key={step.number} className="relative pl-1">
+            <Reveal key={step.number} as="li" delay={i * 0.1} className="group relative pl-1">
               <div className="flex items-baseline gap-3">
-                <span className="font-display text-3xl sm:text-4xl font-semibold text-brand-gold-dark/70">
+                <span className="font-display text-3xl sm:text-4xl font-semibold text-brand-gold-dark/70 transition-colors duration-300 group-hover:text-brand-gold-dark">
                   {step.number}
                 </span>
                 <span className="font-display font-semibold text-lg sm:text-xl text-brand-charcoal">
@@ -27,9 +28,9 @@ export default function OurProcess() {
                 {step.description}
               </p>
               {i < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute top-4 -right-4 w-8 h-px bg-brand-brown/15" />
+                <div className="hidden lg:block absolute top-4 -right-4 w-8 h-px bg-gradient-to-r from-brand-brown/25 to-transparent" />
               )}
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Container>

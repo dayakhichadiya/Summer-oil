@@ -1,7 +1,12 @@
+import Reveal from "@/components/ui/Reveal";
+
 /**
  * Shared heading block used at the top of most sections:
  * a heading, an optional eyebrow/subheading, and optional
  * supporting copy — left-aligned by default, centered on request.
+ *
+ * Animates into view on scroll (see <Reveal />), so every section
+ * across the site gets the same polished entrance for free.
  */
 export default function SectionHeading({
   heading,
@@ -15,9 +20,10 @@ export default function SectionHeading({
   const subColor = light ? "text-brand-gold-light" : "text-brand-brown/70";
 
   return (
-    <div className={`flex flex-col gap-3 max-w-2xl ${alignClass}`}>
+    <Reveal className={`flex flex-col gap-3 max-w-2xl ${alignClass}`}>
       {eyebrow && (
-        <p className={`font-body text-sm font-semibold tracking-wide ${subColor}`}>
+        <p className={`inline-flex items-center gap-2 font-body text-sm font-semibold tracking-[0.14em] uppercase ${subColor}`}>
+          <span className={`h-px w-6 ${light ? "bg-brand-gold-light" : "bg-brand-gold-dark/60"}`} />
           {eyebrow}
         </p>
       )}
@@ -29,6 +35,6 @@ export default function SectionHeading({
           {description}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }

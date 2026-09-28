@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { images } from "@/config/images";
 import Image from "next/image";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import logo from "@../../../public/images/sso-logo.png";
+
 const navItems = [
   { label: "Our Oil", href: "#product" },
   { label: "Our Process", href: "#process" },
@@ -16,6 +17,7 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // lock body scroll while the mobile menu is open
   useEffect(() => {
@@ -25,20 +27,34 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // add a stronger shadow/blur once the page has scrolled a little
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-brand-cream-soft/95 backdrop-blur border-b border-brand-brown/10">
+    <header
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+        scrolled
+          ? "bg-brand-cream-soft/95 backdrop-blur-md border-brand-brown/10 shadow-[0_8px_30px_-15px_rgba(35,29,23,0.35)]"
+          : "bg-brand-cream-soft/70 backdrop-blur border-transparent"
+      }`}
+    >
       <nav className="mx-auto max-w-container container-px flex items-center justify-between h-16 sm:h-[76px]">
         <a
           href="#top"
-          className="flex items-center shrink-0"
+          className="flex items-center shrink-0 transition-transform duration-200 hover:scale-[1.03]"
           onClick={() => setOpen(false)}
           aria-label={siteConfig.brand.name}
         >
           <Image
-            src={logo}
-            alt={siteConfig.brand.name}
-            width={150}
-            height={50}
+            src={images.logo.src}
+            alt={images.logo.alt}
+            width={images.logo.width}
+            height={images.logo.height}
             priority
             className="w-[120px] sm:w-[145px] object-contain"
           />
@@ -49,7 +65,7 @@ export default function Navbar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="text-[15px] font-medium text-brand-charcoal/80 hover:text-brand-brown transition-colors"
+                className="nav-link text-[15px] font-medium text-brand-charcoal/80 hover:text-brand-brown transition-colors"
               >
                 {item.label}
               </a>

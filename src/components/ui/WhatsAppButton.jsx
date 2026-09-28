@@ -23,7 +23,7 @@ export default function WhatsAppButton({
   const href = getWhatsAppLink(message);
 
   const base =
-    "inline-flex items-center justify-center gap-2 font-body font-semibold rounded-full transition-all duration-200 active:scale-[0.98] focus-visible:outline-offset-4";
+    "btn-shine inline-flex items-center justify-center gap-2 font-body font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 focus-visible:outline-offset-4";
 
   const sizes = {
     sm: "text-sm px-4 py-2.5 min-h-[40px]",
@@ -33,7 +33,7 @@ export default function WhatsAppButton({
 
   const variants = {
     primary:
-      "bg-brand-green text-brand-cream-soft shadow-soft hover:bg-brand-green-dark",
+      "bg-brand-green text-brand-cream-soft shadow-soft hover:bg-brand-green-dark hover:shadow-[0_16px_35px_-10px_rgba(84,98,47,0.55)]",
     secondary:
       "bg-transparent text-brand-brown border-2 border-brand-brown/30 hover:border-brand-brown hover:bg-brand-brown/5",
     ghost:
@@ -45,9 +45,16 @@ export default function WhatsAppButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+      className={`group ${base} ${sizes[size]} ${variants[variant]} ${className}`}
     >
-      {showIcon && <MessageCircle size={size === "sm" ? 16 : 20} strokeWidth={2.2} aria-hidden="true" />}
+      {showIcon && (
+        <MessageCircle
+          size={size === "sm" ? 16 : 20}
+          strokeWidth={2.2}
+          className="transition-transform duration-200 group-hover:rotate-12"
+          aria-hidden="true"
+        />
+      )}
       <span className="leading-none">{children}</span>
     </a>
   );

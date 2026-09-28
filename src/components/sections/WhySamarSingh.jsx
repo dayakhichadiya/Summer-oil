@@ -1,5 +1,6 @@
 import { Clock3, MessagesSquare, ShieldCheck, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const reasons = [
@@ -31,24 +32,28 @@ export default function WhySamarSingh() {
       <Container className="py-16 sm:py-20 lg:py-24">
         <SectionHeading
           eyebrow="Why Us"
-          heading="Why Summer Sing Tel?"
+          heading="Why Samar Sing Tel?"
           light
         />
 
         <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {reasons.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="flex flex-col gap-3 p-6 rounded-2xl bg-brand-cream-soft/5 border border-brand-cream-soft/10"
-            >
-              <Icon size={22} className="text-brand-gold-light" strokeWidth={1.8} aria-hidden="true" />
-              <p className="font-display font-semibold text-brand-cream-soft text-lg">
-                {title}
-              </p>
-              <p className="text-sm text-brand-cream-soft/65 leading-relaxed">
-                {description}
-              </p>
-            </div>
+          {reasons.map(({ icon: Icon, title, description }, i) => (
+            <Reveal key={title} delay={i * 0.08} className="h-full">
+              <div className="group flex h-full flex-col gap-3 p-6 rounded-2xl bg-brand-cream-soft/5 border border-brand-cream-soft/10 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-cream-soft/10 hover:border-brand-gold-light/30">
+                <Icon
+                  size={22}
+                  className="text-brand-gold-light transition-transform duration-300 group-hover:scale-110"
+                  strokeWidth={1.8}
+                  aria-hidden="true"
+                />
+                <p className="font-display font-semibold text-brand-cream-soft text-lg">
+                  {title}
+                </p>
+                <p className="text-sm text-brand-cream-soft/65 leading-relaxed">
+                  {description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

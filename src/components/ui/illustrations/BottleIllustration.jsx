@@ -13,7 +13,7 @@ export default function BottleIllustration({ className = "" }) {
       viewBox="0 0 420 560"
       className={className}
       role="img"
-      aria-label="Illustration of a Summer Sing Tel oil bottle"
+      aria-label="Illustration of a Samar Sing Tel oil bottle"
     >
       <defs>
         <linearGradient id="oilFill" x1="0" y1="0" x2="0" y2="1">

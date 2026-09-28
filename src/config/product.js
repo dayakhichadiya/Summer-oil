@@ -8,7 +8,7 @@ export const productConfig = {
   name: "Groundnut Oil",
 
   intro:
-    "Summer Sing Tel is made from carefully selected groundnuts and prepared for the everyday needs of an Indian kitchen — frying, tempering, and everything in between.",
+    "Samar Sing Tel is made from carefully selected groundnuts and prepared for the everyday needs of an Indian kitchen — frying, tempering, and everything in between.",
 
   highlights: [
     {

@@ -4,7 +4,7 @@
  */
 export const faqs = [
   {
-    question: "How do I order Summer Sing Tel?",
+    question: "How do I order Samar Sing Tel?",
     answer:
       "Tap the \"Order on WhatsApp\" button anywhere on this site. It opens a WhatsApp chat, and we'll help you sort out size, quantity and delivery from there.",
   },
