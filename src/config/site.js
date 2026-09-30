@@ -6,7 +6,16 @@
 export const siteConfig = {
   brand: {
     name: "Samar Sing Tel",
-    shortName: "Samar Singh",
+    shortName: "Samar Sing",
+    alternateNames: [
+      "Samar Sing Tel",
+      "Samar Oil",
+      "Sing Tel",
+      "Sing Tel Oil",
+      "Shudh Sing Tel",
+      "Shudh Singh Tel",
+      "Samar Singh Groundnut Oil",
+    ],
   },
 
   tagline: "Trust in Every Taste, Quality in Every Drop.",
@@ -14,23 +23,21 @@ export const siteConfig = {
   description:
     "Samar Sing Tel is a groundnut (peanut) oil brand, made for everyday Indian kitchens across Gujarat.",
 
-  url: "https://www.samarsinghtel.com",
+  url: "https://samaroil.com",
 
-  // WhatsApp — digits only, with country code, no plus sign and no spaces.
-  // Example for an Indian number 98765 43210 -> "919876543210"
   whatsapp: {
-    number: "919033296462", // TODO: replace with the real business WhatsApp number
+    number: "919033296462",
     defaultMessage:
-      "Hello Samar Sing Tel, I'd like to know more about your groundnut oil.",
+      "નમસ્તે, મને સમર સિંગતેલ વિશે માહિતી જોઈએ છે અને ખરીદી અંગે જાણવું છે.",
   },
 
   contact: {
-    email: "samaroil666@gmail.com", // TODO: replace with real email
+    email: "samaroil666@gmail.com",
     address: "Gujarat, India",
   },
 
   social: {
-    instagram: "", // TODO: add handle URL if available
+    instagram: "",
     facebook: "",
   },
 };
