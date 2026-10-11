@@ -1,8 +1,3 @@
-/**
- * Single source of truth for brand + contact details.
- * Update the WhatsApp number here — every WhatsApp button on the
- * site reads from this file via src/lib/whatsapp.js
- */
 export const siteConfig = {
   brand: {
     name: "Samar Sing Tel",
@@ -26,7 +21,7 @@ export const siteConfig = {
   url: "https://samaroil.com",
 
   whatsapp: {
-    number: "919033296462",
+    number: "919724532525",
     defaultMessage:
       "નમસ્તે, મને સમર સિંગતેલ વિશે માહિતી જોઈએ છે અને ખરીદી અંગે જાણવું છે.",
   },

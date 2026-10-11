@@ -29,12 +29,34 @@ export const productConfig = {
     },
   ],
 
-  // Sizes are placeholders — update quantities / labels as per your actual packaging.
+
   sizes: [
-    { label: "1 Litre" },
-    { label: "5 Litre" },
-    { label: "15 Litre (Tin)" },
+    {
+      label: "1 Litre",
+      title: "Samar Singtel Groundnut Oil",
+      description:
+        "A convenient 1 litre pack of groundnut oil for everyday cooking at home.",
+      imageKey: "1 Litre",
+      slug: "samar-sing-tel-groundnut-oil-1-litre",
+    },
+    {
+      label: "5 Litre",
+      title: "Samar Singtel Groundnut Oil",
+      description:
+        "A larger 5 litre pack for families and kitchens that use groundnut oil regularly.",
+      imageKey: "5 Litre",
+      slug: "samar-sing-tel-groundnut-oil-5-litre",
+    },
+    {
+      label: "15 kg (16.48 ltr)",
+      title: "Samar Singtel Groundnut Oil Tin",
+      description:
+        "A large-format tin for bulk household use and food-service kitchens.",
+      imageKey: "15 kg (16.48 ltr)",
+      slug: "samar-sing-tel-groundnut-oil-15kg-tin",
+    },
   ],
+
 
   usageNotes: [
     "Suitable for deep frying and tempering",
