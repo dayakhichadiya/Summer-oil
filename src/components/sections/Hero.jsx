@@ -63,7 +63,7 @@ export default function Hero() {
             className="rise mt-6 max-w-md text-lg leading-relaxed text-[#2a2016]/65"
             style={{ animationDelay: "0.24s" }}
           >
-            Samar Sing Tel is a groundnut (peanut) oil made for everyday
+            Samar Singtel is a groundnut (peanut) oil made for everyday
             Indian kitchens across Gujarat — pure, golden, and pressed the way
             your family has always done it.
           </p>

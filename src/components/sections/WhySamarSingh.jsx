@@ -32,7 +32,7 @@ export default function WhySamarSingh() {
       <Container className="py-16 sm:py-20 lg:py-24">
         <SectionHeading
           eyebrow="Why Us"
-          heading="Why Samar Sing Tel?"
+          heading="Why Samar Singtel?"
           light
         />
 

@@ -16,7 +16,7 @@ export default function LifestyleSection() {
             </h2>
             <p className="text-base sm:text-lg text-brand-charcoal/75 leading-relaxed">
               From breakfast in the morning to dinner at night — whether you're deep frying,
-              tempering, or cooking an everyday meal, Samar Sing Tel stays with your kitchen
+              tempering, or cooking an everyday meal, Samar Singtel stays with your kitchen
               through it all.
             </p>
             <ul className="flex flex-col gap-3 mt-2">

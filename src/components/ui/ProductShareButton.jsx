@@ -1,20 +1,18 @@
 
 "use client";
 
-export default function ProductShareButton({ title, url }) {
+export default function ProductShareButton({ title, description, url }) {
   async function handleShare() {
     const shareUrl =
       typeof window !== "undefined"
         ? new URL(url, window.location.origin).href
         : url;
 
+    const shareData = { title, text: description, url: shareUrl };
+
     try {
       if (navigator.share) {
-        await navigator.share({
-          title,
-          text: `Check out ${title} from Samar Singtel.`,
-          url: shareUrl,
-        });
+        await navigator.share(shareData);
       } else {
         await navigator.clipboard.writeText(shareUrl);
         alert("Product link copied!");
@@ -22,8 +20,12 @@ export default function ProductShareButton({ title, url }) {
     } catch (error) {
       if (error?.name !== "AbortError") {
         try {
-          await navigator.clipboard.writeText(shareUrl);
-          alert("Product link copied!");
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(shareUrl);
+            alert("Product link copied!");
+          } else {
+            alert("Unable to share this link. Please try again.");
+          }
         } catch {
           alert("Unable to share this link. Please try again.");
         }

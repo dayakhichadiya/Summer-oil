@@ -1,22 +1,23 @@
 export const siteConfig = {
   brand: {
-    name: "Samar Sing Tel",
+    name: "Samar Singtel",
     shortName: "Samar Sing",
     alternateNames: [
-      "Samar Sing Tel",
+      "Samar Singtel",
       "Samar Oil",
       "Sing Tel",
       "Sing Tel Oil",
-      "Shudh Sing Tel",
-      "Shudh Singh Tel",
-      "Samar Singh Groundnut Oil",
+      "Shudh Singtel",
+      "Shudh Singtel",
+      "Shudh Singtel",
+      "Samar Sing Groundnut Oil",
     ],
   },
 
   tagline: "Trust in Every Taste, Quality in Every Drop.",
 
   description:
-    "Samar Sing Tel is a groundnut (peanut) oil brand, made for everyday Indian kitchens across Gujarat.",
+    "Samar Singtel is a groundnut (peanut) oil brand, made for everyday Indian kitchens across Gujarat.",
 
   url: "https://samaroil.com",
 
