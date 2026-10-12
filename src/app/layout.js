@@ -24,14 +24,18 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: "/images/favIcon.png",
+    apple: "/images/favIcon.png",
+  },
   title: {
     default: `${siteConfig.brand.name} | Groundnut Oil, Gujarat`,
     template: `%s | ${siteConfig.brand.name}`,
   },
   description:
-    "Samar Sing Tel — groundnut oil (peanut oil) made for everyday Indian kitchens in Gujarat. Reach out directly on WhatsApp to place your order.",
+    "Samar Singtel — groundnut oil (peanut oil) made for everyday Indian kitchens in Gujarat. Reach out directly on WhatsApp to place your order.",
   keywords: [
-    "Samar Sing Tel",
+    "Samar Singtel",
     "Groundnut Oil",
     "Peanut Oil",
     "Groundnut Oil Gujarat",

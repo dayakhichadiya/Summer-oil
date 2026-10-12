@@ -54,8 +54,9 @@ export default function ProductShowcase() {
 
                   <div className="mb-4 flex justify-end">
                     <ProductShareButton
-                      title={`Samar Singtel Groundnut Oil - ${size.label}`}
-                      url={`/`}
+                      title={`${size.title} - ${size.label}`}
+                      description={size.description}
+                      url={`/products/${size.slug}`}
                     />
                   </div>
 
@@ -96,7 +97,7 @@ export default function ProductShowcase() {
                         variant="secondary"
                         size="sm"
                         className="w-full"
-                        message={`Hello, I'd like more information about the ${size.label} pack of Samar Sing Tel.`}
+                        message={`Hello, I'd like more information about the ${size.label} pack of Samar Singtel.`}
                       >
                         Enquire on WhatsApp
                       </WhatsAppButton>
