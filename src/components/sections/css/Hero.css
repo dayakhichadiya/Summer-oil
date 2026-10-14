@@ -1,0 +1,414 @@
+.samar-hero {
+    --hero-ink: #35271b;
+    --hero-gold: #e99013;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--hero-ink);
+    background: #fbf5eb;
+}
+
+/* Desktop: one full-width hero photograph */
+.hero-desktop-art {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background-image: url("/images/HeroImg.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Softens the text area without hiding the product */
+.samar-hero::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(90deg,
+            rgba(255, 250, 242, 0.48) 0%,
+            rgba(255, 250, 242, 0.30) 31%,
+            rgba(255, 250, 242, 0.04) 54%,
+            transparent 70%);
+}
+
+.hero-light {
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 226, 177, 0.18);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.hero-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: min(100% - 64px, 1400px);
+    min-height: clamp(650px, 48vw, 790px);
+    margin-inline: auto;
+    padding-block: 60px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    width: 51%;
+    max-width: 660px;
+    padding-block: 12px;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: 1px solid rgba(211, 143, 48, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 253, 248, 0.78);
+    color: #6c5b4b;
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.hero-eyebrow-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: #f5a623;
+}
+
+.hero-copy h1 {
+    margin: 26px 0 22px;
+    color: #35271b;
+    font-size: clamp(48px, 5.1vw, 76px);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+.hero-highlight {
+    color: #e99013;
+}
+
+.hero-description {
+    max-width: 490px;
+    margin: 0;
+    color: #6f6254;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 29px;
+}
+
+.hero-button {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 0 23px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease,
+        background-color 200ms ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+.hero-button-primary {
+    background: linear-gradient(135deg, #ffb52e, #f49a15);
+    color: #34271b;
+    box-shadow: 0 10px 25px rgba(218, 142, 24, 0.22);
+}
+
+.hero-button-primary:hover {
+    box-shadow: 0 14px 30px rgba(218, 142, 24, 0.32);
+}
+
+.hero-button-primary>span {
+    font-size: 18px;
+}
+
+.hero-button-secondary {
+    border-color: rgba(91, 70, 47, 0.20);
+    background: rgba(255, 253, 248, 0.86);
+    color: #433427;
+    backdrop-filter: blur(10px);
+}
+
+.hero-button-secondary:hover {
+    background: #fff;
+}
+
+.hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 17px;
+    margin-top: 34px;
+    padding-top: 21px;
+    border-top: 1px solid rgba(103, 77, 45, 0.17);
+}
+
+.hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+.hero-trust-icon {
+    display: grid;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    place-items: center;
+    border: 1px solid rgba(201, 135, 44, 0.34);
+    border-radius: 50%;
+    color: #b7761d;
+    font-size: 19px;
+}
+
+.hero-trust-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-trust-item strong {
+    color: #443326;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero-trust-item div span {
+    color: #7c6d5d;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.hero-trust-divider {
+    width: 1px;
+    height: 34px;
+    background: rgba(103, 77, 45, 0.18);
+}
+
+/* Hidden on desktop; shown below the copy on phones */
+.hero-mobile-art {
+    display: none;
+}
+
+/* TABLETS AND SMALL LAPTOPS */
+@media (max-width: 1000px) {
+    .hero-layout {
+        width: min(100% - 44px, 900px);
+        min-height: 640px;
+    }
+
+    .hero-copy {
+        width: 57%;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(44px, 5.5vw, 60px);
+    }
+
+    .hero-description {
+        max-width: 410px;
+        font-size: 15px;
+    }
+
+    .hero-trust {
+        gap: 12px;
+    }
+
+    .hero-trust-divider {
+        display: none;
+    }
+
+    .hero-desktop-art {
+        background-position: 58% center;
+    }
+}
+
+/* MOBILE FIRST LAYOUT */
+@media (max-width: 700px) {
+    .samar-hero {
+        background: linear-gradient(160deg, #fffaf2 0%, #f8efdf 100%);
+    }
+
+    .hero-desktop-art {
+        display: none;
+    }
+
+    .samar-hero::before {
+        display: none;
+    }
+
+    .hero-light {
+        top: 4%;
+        left: -200px;
+        width: 320px;
+        height: 320px;
+        background: rgba(255, 216, 155, 0.22);
+        filter: blur(75px);
+    }
+
+    .hero-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 30px 20px 30px;
+    }
+
+    .hero-copy {
+        width: 100%;
+        max-width: 580px;
+        margin-inline: auto;
+        padding: 0;
+    }
+
+    .hero-eyebrow {
+        gap: 8px;
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .hero-eyebrow-dot {
+        width: 8px;
+        height: 8px;
+        flex-basis: 8px;
+    }
+
+    .hero-copy h1 {
+        margin: 20px 0 15px;
+        font-size: clamp(39px, 9.5vw, 58px);
+        line-height: 1.04;
+        letter-spacing: -0.045em;
+    }
+
+    .hero-description {
+        max-width: 510px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .hero-button {
+        width: 100%;
+        min-height: 49px;
+        padding-inline: 16px;
+        font-size: 12px;
+    }
+
+    .hero-trust {
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 23px;
+        padding-top: 17px;
+    }
+
+    .hero-trust-item {
+        flex: 1 1 0;
+        gap: 6px;
+    }
+
+    .hero-trust-icon {
+        width: 29px;
+        height: 29px;
+        flex-basis: 29px;
+        font-size: 15px;
+    }
+
+    .hero-trust-item strong {
+        font-size: 11px;
+    }
+
+    .hero-trust-item div span {
+        font-size: 9px;
+    }
+
+    /* Crop toward the right so the bottle stays visible */
+    .hero-mobile-art {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        min-height: 230px;
+        max-height: 390px;
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        border-radius: 22px;
+        background-color: #f7ead5;
+        background-image: url("/images/HeroImg.png");
+        background-repeat: no-repeat;
+        background-position: 70% center;
+        background-size: auto 100%;
+        box-shadow: 0 16px 36px rgba(78, 54, 27, 0.12);
+    }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 380px) {
+    .hero-layout {
+        padding: 25px 16px;
+    }
+
+    .hero-copy h1 {
+        font-size: 38px;
+    }
+
+    .hero-trust {
+        gap: 7px;
+    }
+
+    .hero-trust-icon {
+        display: none;
+    }
+
+    .hero-trust-item strong {
+        font-size: 10px;
+    }
+
+    .hero-trust-item div span {
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-button {
+        transition: none;
+    }
+}
