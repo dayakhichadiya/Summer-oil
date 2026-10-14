@@ -1,9 +1,3 @@
-/**
- * Product information shown across the Product Introduction and
- * Product Showcase sections. Edit freely — only add claims here
- * (organic, cold-pressed, FSSAI certified, etc.) once you can
- * verify and stand behind them.
- */
 export const productConfig = {
   name: "Groundnut Oil",
 
@@ -33,6 +27,8 @@ export const productConfig = {
   sizes: [
     {
       label: "1 Litre",
+      price: "\u20B9260",
+      netWeight: "910 gm",
       title: "Samar Singtel Groundnut Oil",
       description:
         "A convenient 1 litre pack of groundnut oil for everyday cooking at home.",
@@ -41,6 +37,8 @@ export const productConfig = {
     },
     {
       label: "5 Litre",
+      price: "\u20B91,250",
+      netWeight: "4.55 kg",
       title: "Samar Singtel Groundnut Oil",
       description:
         "A larger 5 litre pack for families and kitchens that use groundnut oil regularly.",
@@ -49,6 +47,8 @@ export const productConfig = {
     },
     {
       label: "15 kg (16.48 ltr)",
+      price: "\u20B93,350",
+      netWeight: "16.48 ltr",
       title: "Samar Singtel Groundnut Oil Tin",
       description:
         "A large-format tin for bulk household use and food-service kitchens.",
@@ -64,3 +64,6 @@ export const productConfig = {
     "Store in a cool, dry place",
   ],
 };
+
+
+

@@ -1,25 +1,9 @@
-/**
- * Single source of truth for every real photo used on the site.
- *
- * Today most of these point at the same one or two placeholder shots
- * that shipped with the project (public/images/hero1.jpg, farmner.jpg,
- * miniHero.png) so the layout can be judged with real photography
- * instead of the old hand-drawn illustrations.
- *
- * When your real product photos are ready:
- *   1. Drop the files into /public/images/
- *   2. Update the matching path below (nothing else needs to change —
- *      every component reads from here)
- *
- * width/height should match the actual image's aspect ratio so Next.js
- * can reserve the right space and avoid layout shift.
- */
 export const images = {
   hero: {
-    src: "/images/hero1.jpg",
+    src: "/images/HeroImg.png",
     alt: "Bottle of golden Samar Singtel groundnut oil with fresh peanuts",
-    width: 1024,
-    height: 1280,
+    width: 1663,
+    height: 928,
   },
 
   brandStory: {
@@ -36,7 +20,7 @@ export const images = {
     height: 1000,
   },
 
-   kitchen: {
+  kitchen: {
     src: "/images/kitchen.png",
     alt: "Samar Singtel ",
     width: 900,
@@ -52,9 +36,9 @@ export const images = {
   },
 
   logo: {
-    src: "/images/sso-logo.png",
+    src: "/images/MainLogo.png",
     alt: "Samar Singtel logo",
     width: 150,
-    height: 50,
+    height: 70,
   },
 };

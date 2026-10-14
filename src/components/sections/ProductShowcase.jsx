@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
@@ -27,14 +26,10 @@ export default function ProductShowcase() {
               Choose Your Pack
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-6 text-brand-charcoal/70 sm:text-base">
-              Discover the right Samar Singtel groundnut oil pack
-              for your kitchen.
+              Discover the right Samar Singtel groundnut oil pack for your kitchen.
             </p>
           </div>
-
-          <p className="text-sm text-brand-charcoal/60">
-            3 pack options
-          </p>
+          <p className="text-sm text-brand-charcoal/60">3 pack options</p>
         </Reveal>
 
         <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -42,55 +37,56 @@ export default function ProductShowcase() {
             const photo = images.productSizes[size.label];
 
             return (
-              <Reveal
-                key={size.label}
-                delay={i * 0.08}
-                className="h-full"
-              >
-                <article className="group flex h-full flex-col rounded-3xl
-                  border border-brand-brown/10 bg-brand-cream-soft
-                  p-4 shadow-card transition duration-300
-                  hover:-translate-y-1 hover:shadow-xl sm:p-5">
-
-                  <div className="mb-4 flex justify-end">
-                    <ProductShareButton
-                      title={`${size.title} - ${size.label}`}
-                      description={size.description}
-                      url={`/products/${size.slug}`}
-                    />
-                  </div>
-
-                  <div className="flex h-[320px] w-full items-center
-                    justify-center overflow-hidden rounded-2xl
-                    bg-white p-4 sm:h-[350px]">
+              <Reveal key={size.label} delay={i * 0.08} className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-brand-brown/10 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <div className="relative m-3 mb-0 flex h-[280px] items-center justify-center overflow-hidden rounded-2xl bg-brand-cream-soft p-5 sm:h-[310px]">
                     <Image
                       src={photo.src}
                       alt={photo.alt}
                       width={600}
                       height={700}
-                      sizes="(max-width: 639px) 90vw,
-                             (max-width: 1279px) 42vw, 360px"
-                      className="h-full w-full object-contain
-                        transition-transform duration-500
-                        group-hover:scale-[1.025]"
+                      sizes="(max-width: 639px) 90vw, (max-width: 1279px) 42vw, 360px"
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.035]"
                     />
+                    <div className="absolute right-3 top-3">
+                      <ProductShareButton
+                        title={`${size.title} - ${size.label}`}
+                        description={size.description}
+                        url={`/products/${size.slug}`}
+                      />
+                    </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col pt-5">
-                    <h3 className="font-display text-xl font-semibold
-                      leading-snug text-brand-charcoal sm:text-2xl">
-                      Samar Singtel Groundnut Oil
-                    </h3>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-green">
+                          Samar Singtel
+                        </p>
+                        <h3 className="mt-1 font-display text-xl font-semibold leading-snug text-brand-charcoal sm:text-2xl">
+                          Groundnut Oil
+                        </h3>
+                      </div>
+                      <span className="shrink-0 rounded-full bg-brand-cream px-3 py-1.5 text-xs font-semibold text-brand-brown">
+                        {size.label}
+                      </span>
+                    </div>
 
-                    <p className="mt-2 text-sm font-semibold
-                      text-brand-green">
-                      {size.label}
-                    </p>
-
-                    <p className="mt-3 min-h-[48px] text-sm
-                      leading-6 text-brand-charcoal/70">
+                    <p className="mt-4 min-h-[48px] text-sm leading-6 text-brand-charcoal/70">
                       {size.description}
                     </p>
+
+                    <div className="mt-5 flex items-end justify-between gap-3 border-t border-brand-brown/10 pt-4">
+                      <div>
+                        <p className="text-xs font-medium text-brand-charcoal/55">Price</p>
+                        <p className="mt-0.5 text-2xl font-bold tracking-tight text-brand-charcoal">{size.price}</p>
+                      </div>
+                      {size.netWeight && (
+                        <p className="pb-1 text-right text-xs text-brand-charcoal/60">
+                          Net weight<span className="block font-semibold text-brand-charcoal/80">{size.netWeight}</span>
+                        </p>
+                      )}
+                    </div>
 
                     <div className="mt-auto pt-5">
                       <WhatsAppButton

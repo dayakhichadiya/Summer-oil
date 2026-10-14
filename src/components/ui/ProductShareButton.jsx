@@ -57,12 +57,11 @@ export default function ProductShareButton({ title, description, url }) {
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <circle cx="18" cy="5" r="3" />
-        <circle cx="6" cy="12" r="3" />
-        <circle cx="18" cy="19" r="3" />
-        <path d="m8.6 10.5 6.8-4" />
-        <path d="m8.6 13.5 6.8 4" />
+        <path d="M12 15V3" />
+        <path d="m7 8 5-5 5 5" />
+        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" />
       </svg>
     </button>
   );
 }
+

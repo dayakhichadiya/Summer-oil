@@ -29,7 +29,7 @@ export const siteConfig = {
 
   contact: {
     email: "samaroil666@gmail.com",
-    address: "Gujarat, India",
+    address: "23, Arya Heights, Daimond Hospital, opp.chikuwadi, nana varachha, Surat, Gujarat, India",
   },
 
   social: {

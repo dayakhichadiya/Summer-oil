@@ -85,7 +85,7 @@ export default function Navbar() {
               width={images.logo.width}
               height={images.logo.height}
               priority
-              className="w-[120px] sm:w-[145px] object-contain"
+              className="w-[140px] sm:w-[180px] object-contain"
             />
           </a>
 
