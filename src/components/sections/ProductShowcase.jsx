@@ -93,7 +93,7 @@ export default function ProductShowcase() {
                         variant="secondary"
                         size="sm"
                         className="w-full"
-                        message={`Hello, I'd like more information about the ${size.label} pack of Samar Singtel.`}
+                        message={`નમસ્તે, મને સમર સિંગ તેલના ${size.label} પેક વિશે વધુ માહિતી મેળવવી છે.`}
                       >
                         Enquire on WhatsApp
                       </WhatsAppButton>
