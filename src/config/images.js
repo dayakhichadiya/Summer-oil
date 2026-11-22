@@ -14,7 +14,7 @@ export const images = {
   },
 
   lifestyle: {
-    src: "/images/miniHero.png",
+    src: "/images/cookCampaign.png",
     alt: "Samar Singtel groundnut oil being used in an everyday Indian kitchen",
     width: 900,
     height: 1000,

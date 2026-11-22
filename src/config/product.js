@@ -47,7 +47,7 @@ export const productConfig = {
     },
     {
       label: "15 kg (16.48 ltr)",
-      price: "\u20B93,350",
+      price: "\u20B93,650",
       netWeight: "16.48 ltr",
       title: "Samar Singtel Groundnut Oil Tin",
       description:

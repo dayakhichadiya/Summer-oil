@@ -36,6 +36,137 @@ body {
   color: var(--color-charcoal);
   overflow-x: hidden;
 }
+/* ============ Ad Popup ============ */
+
+@keyframes ad-backdrop-in {
+  from { opacity: 0; backdrop-filter: blur(0); -webkit-backdrop-filter: blur(0); }
+  to   { opacity: 1; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+}
+
+@keyframes ad-backdrop-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes ad-card-in {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.88) rotateX(8deg); filter: blur(6px); }
+  60%  { opacity: 1; transform: translateY(-6px) scale(1.02) rotateX(0deg); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ad-card-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(24px) scale(0.92); }
+}
+
+@keyframes ad-shine {
+  0%   { transform: translateX(-130%) skewX(-20deg); }
+  100% { transform: translateX(260%) skewX(-20deg); }
+}
+
+@keyframes ad-glow {
+  0%, 100% { box-shadow: 0 24px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.12), 0 0 40px rgba(250, 204, 21, 0.18); }
+  50%      { box-shadow: 0 24px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.2),  0 0 70px rgba(250, 204, 21, 0.38); }
+}
+
+@keyframes ad-progress {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+@keyframes ad-cta-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ad-popup-backdrop {
+  background: radial-gradient(ellipse at center, rgba(52, 39, 22, 0.7), rgba(10, 12, 9, 0.88));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: ad-backdrop-in 450ms ease-out both;
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.ad-popup-backdrop.is-closing {
+  animation: ad-backdrop-out 300ms ease-in both;
+}
+
+.ad-popup-card {
+  perspective: 1000px;
+  animation: ad-card-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ad-popup-card.is-closing {
+  animation: ad-card-out 300ms ease-in both;
+}
+
+.ad-popup-frame {
+  animation: ad-glow 3.2s ease-in-out 700ms infinite;
+  background: #1a1a14;
+}
+
+/* Light sweep over image */
+.ad-popup-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: translateX(-130%) skewX(-20deg);
+  animation: ad-shine 1400ms ease-in-out 900ms 1 both;
+}
+
+/* Auto-close progress */
+.ad-popup-progress-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.ad-popup-progress-bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  animation-name: ad-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.ad-popup-cta {
+  animation: ad-cta-in 500ms ease-out 700ms both;
+}
+
+.ad-popup-close {
+  animation: ad-cta-in 400ms ease-out 500ms both;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ad-popup-backdrop,
+  .ad-popup-card,
+  .ad-popup-frame,
+  .ad-popup-shine,
+  .ad-popup-cta,
+  .ad-popup-close {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+  }
+}
 
 ::selection {
   background-color: var(--color-gold-light);

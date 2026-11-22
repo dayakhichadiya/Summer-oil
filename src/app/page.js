@@ -13,6 +13,7 @@ import LifestyleSection from "@/components/sections/LifestyleSection";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import AdBannerPopup from "@/components/ui/AdBannerPopup";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <AdBannerPopup />
     </>
   );
 }
